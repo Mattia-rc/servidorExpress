@@ -54,12 +54,37 @@ class cartManager{
         }
       }
 
+      getCarts() {
+        try {
+          if (this.carrito.length === 0) {
+            console.log("Not found");
+          }
+          console.log(this.carrito);
+          return this.carrito;
+        } catch (error) {
+          console.log(error);
+          return "getCarts: Error";
+        }
+      }
+
+      getCartsById(id) {                                               //funcion de obtener el id solicitdo
+        let carritoId = this.carrito.find((p) => p.id === id)            
+
+        if (!carritoId) {
+            console.log("no se encontraron carrito con ese ID")
+        } else {
+            console.log(carritoId)
+            return carritoId
+        }
+    }
+
 
   }
 
   let carrito = new cartManager('./data/carrito.json')
 
-  carrito.addCart({quantity: 2})
-
+   carrito.addCart({quantity: 2}) 
+   carrito.getCarts() 
+  carrito.getCartsById(1)
   
   export default carrito
