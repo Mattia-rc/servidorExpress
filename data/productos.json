@@ -1,0 +1,74 @@
+[
+  {
+    "title": "Iphone",
+    "description": "iphone 13 mini",
+    "price": 1200,
+    "thumbnail": "img",
+    "stock": 2,
+    "id": 1
+  },
+  {
+    "title": "iphone",
+    "description": "iphone 12 mini",
+    "price": 1000,
+    "thumbnail": "img",
+    "stock": 4,
+    "id": 2
+  },
+  {
+    "title": "iphone",
+    "description": "iphone 11 ",
+    "price": 2300,
+    "thumbnail": "img",
+    "stock": 3,
+    "id": 3
+  },
+  {
+    "title": "iphone",
+    "description": "iphone X ",
+    "price": 233,
+    "thumbnail": "img",
+    "stock": 3,
+    "id": 4
+  },
+  {
+    "title": "iphone",
+    "description": "iphone XR ",
+    "price": 205,
+    "thumbnail": "img",
+    "stock": 3,
+    "id": 5
+  },
+  {
+    "title": "iphone",
+    "description": "iphone 8 ",
+    "price": 230,
+    "thumbnail": "img",
+    "stock": 3,
+    "id": 6
+  },
+  {
+    "title": "iphone",
+    "description": "iphone 7 ",
+    "price": 250,
+    "thumbnail": "img",
+    "stock": 3,
+    "id": 7
+  },
+  {
+    "title": "iphone",
+    "description": "iphone 6 ",
+    "price": 230,
+    "thumbnail": "img",
+    "stock": 3,
+    "id": 8
+  },
+  {
+    "title": "iphone",
+    "description": "iphone 6s ",
+    "price": 500,
+    "thumbnail": "img",
+    "stock": 3,
+    "id": 9
+  }
+]
