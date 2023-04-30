@@ -83,8 +83,11 @@ class cartManager{
 
   let carrito = new cartManager('./data/carrito.json')
 
-   carrito.addCart({quantity: 2}) 
-   carrito.getCarts() 
-  carrito.getCartsById(1)
+    function carritoCrear(){
+      carrito.addCart({quantity: 2}) 
+      carrito.getCarts() 
+     carrito.getCartsById(1)
+    }
+ /*    carritoCrear() */
   
   export default carrito

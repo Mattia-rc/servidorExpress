@@ -1,6 +1,6 @@
 import express from 'express'
 import products from './products.js'
-
+import carrito from './carrito.js';
 let server = express()
 
 
@@ -70,4 +70,39 @@ let query_function =(req,res)=>{
    }
 }
 
+
+
+
 server.get(query_route, query_function)
+
+let carrito_route = "/carrito"
+
+let carrito_function=(req,res)=>{
+    let quantity = carrito.getCarts().length
+    return res.send(`tenes ${quantity} de productos en el carrito `)
+}
+
+server.get(carrito_route, carrito_function)
+
+
+let carrito_uno = '/carrito/:id'
+
+let carrito_function_uno = (req,res)=>{
+    let parametro = req.params
+    let id = Number(parametro.id)
+    let un_carrito = carrito.getCartsById(id)
+
+    if(un_carrito){
+        return res.send({
+            success: true,
+            product: un_carrito
+        })
+    }else{
+        return res.send({
+            success: false,
+            product: 'not found'
+        })
+    }
+}
+
+server.get(carrito_uno, carrito_function_uno)
