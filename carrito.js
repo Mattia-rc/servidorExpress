@@ -1,5 +1,5 @@
 import fs from 'fs'
-
+import ProductManager from './products.js'
 class cartManager{
     constructor(path){
         this.carrito = []
@@ -22,38 +22,32 @@ class cartManager{
     }
 
 
-    addCart({quantity}) {  // Función para agregar un carrito
-        try {
-          // Obtener el último id de carrito en la lista de carrito
-          let lastId = 0;
+  
+    addCart({ productId, quantity}) {                           //funcion de agregar productos
+      try {
+          let product = ProductManager.getProductsById(productId).description 
+          let data = { product, quantity};                         // declaramos el dato donde se ingresaran los datos que le ingresamos dentro
           if (this.carrito.length > 0) {
-            lastId = this.carrito[this.carrito.length - 1].id;
-          }
-          
-          // Crear un nuevo carrito con el id autoincrementable y el array de productos vacío
-          const newCart = {
-            id: lastId + 1,
-            products: [{
-                quantity: quantity,
-                pid: lastId + 1
-            }]
-          };
-          
-          // Agregar el nuevo carrito a la lista de carrito
-          this.carrito.push(newCart);
-          
-          // Escribir la lista de carrito en el archivo
-          const data_json = JSON.stringify(this.carrito, null, 2);
-          fs.writeFileSync(this.path, data_json);
-          
-          console.log('Id creado para el carrito: ' + newCart.id);
-          return 'Id del carrito creado: ' + newCart.id;
-        } catch (error) {
-          console.log(error);
-          return 'addCart: error';
-        }
-      }
+              let next_id = this.carrito[this.carrito.length - 1].id + 1;
+              data.id = next_id;
+          } else {
 
+              data.id = 1;
+          }
+          this.carrito.push(data);                                                          // pusheamos el producto
+          let data_json = JSON.stringify(this.carrito, null, 2);                            //pasamos el dato a json
+          fs.writeFileSync(this.path, data_json);     
+          console.log('Id creado para el carrito: ' + data.id);
+          return 'Id del carrito creado: ' + data.id;
+      } catch (error) {
+          console.log(error);
+          return 'Error: no se pudo crear el carrito';
+      }
+  }
+ 
+
+    
+      
       getCarts() {
         try {
           if (this.carrito.length === 0) {
@@ -83,10 +77,13 @@ class cartManager{
 
   let carrito = new cartManager('./data/carrito.json')
     function carritoCrear(){
-      carrito.addCart({quantity: 2}) 
-      carrito.getCarts() 
-     carrito.getCartsById(1)
+      carrito.addCart({productId:1, quantity:2}) 
+      carrito.addCart({productId:2, quantity:32}) 
+      carrito.addCart({productId:3, quantity:10}) 
+      carrito.addCart({productId:4, quantity:3}) 
+       carrito.getCarts() 
+     carrito.getCartsById(1) 
     }
- /*    carritoCrear() */
+    /*   carritoCrear()   */
   
   export default carrito

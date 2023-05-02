@@ -1,38 +1,22 @@
 [
   {
-    "id": 1,
-    "products": [
-      {
-        "quantity": 2,
-        "pid": 1
-      }
-    ]
+    "product": "iphone 13 mini",
+    "quantity": 2,
+    "id": 1
   },
   {
-    "id": 2,
-    "products": [
-      {
-        "quantity": 2,
-        "pid": 2
-      }
-    ]
+    "product": "iphone 12 mini",
+    "quantity": 32,
+    "id": 2
   },
   {
-    "id": 3,
-    "products": [
-      {
-        "quantity": 2,
-        "pid": 3
-      }
-    ]
+    "product": "iphone 11 ",
+    "quantity": 10,
+    "id": 3
   },
   {
-    "id": 4,
-    "products": [
-      {
-        "quantity": 2,
-        "pid": 4
-      }
-    ]
+    "product": "iphone X ",
+    "quantity": 3,
+    "id": 4
   }
 ]
