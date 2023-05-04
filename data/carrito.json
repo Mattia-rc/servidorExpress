@@ -1,0 +1,22 @@
+[
+  {
+    "product": "iphone 13 mini",
+    "quantity": 2,
+    "id": 1
+  },
+  {
+    "product": "iphone 12 mini",
+    "quantity": 32,
+    "id": 2
+  },
+  {
+    "product": "iphone 11 ",
+    "quantity": 10,
+    "id": 3
+  },
+  {
+    "product": "iphone X ",
+    "quantity": 3,
+    "id": 4
+  }
+]
